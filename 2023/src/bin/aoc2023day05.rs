@@ -1,8 +1,6 @@
 use derive_more::{Add, AddAssign, From, Into, Sub, SubAssign};
 use std::{
-    error::Error,
     fmt,
-    io::{BufRead, BufReader, Cursor},
     ops::Range,
     str,
     str::FromStr,
