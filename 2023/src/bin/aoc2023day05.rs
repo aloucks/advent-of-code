@@ -184,26 +184,22 @@ fn main() {
     assert_eq!(Some("humidity-to-location map:"), lines.next());
     let humidity_to_location_ranges = parse_ranges::<HumidityId, LocationId>(&mut lines);
 
-    let mut locations = Vec::new();
+    let result = seeds
+        .iter()
+        .map(|seed_id| {
+            let soil_id = find_id(seed_id, &seed_to_soil_ranges);
+            let fertilizer_id = find_id(&soil_id, &soil_to_fertilizer_ranges);
+            let water_id = find_id(&fertilizer_id, &fertilizer_to_water_ranges);
+            let light_id = find_id(&water_id, &water_to_light_ranges);
+            let temperature_id = find_id(&light_id, &light_to_temperature_ranges);
+            let humidity_id = find_id(&temperature_id, &temperature_to_humidity_ranges);
+            let location_id = find_id(&humidity_id, &humidity_to_location_ranges);
 
-    for seed_id in seeds.iter() {
-        let soil_id = find_id(seed_id, &seed_to_soil_ranges);
-        let fertilizer_id = find_id(&soil_id, &soil_to_fertilizer_ranges);
-        let water_id = find_id(&fertilizer_id, &fertilizer_to_water_ranges);
-        let light_id = find_id(&water_id, &water_to_light_ranges);
-        let temperature_id = find_id(&light_id, &light_to_temperature_ranges);
-        let humidity_id = find_id(&temperature_id, &temperature_to_humidity_ranges);
-        let location_id = find_id(&humidity_id, &humidity_to_location_ranges);
-
-        locations.push((location_id, seed_id));
-        println!();
-    }
-
-    locations.sort_by(|a, b| a.0.cmp(&b.0));
-
-    println!("{:?}", locations[0]);
-    println!();
-    println!("answer: {:?}", locations[0].0 .0);
+            (location_id, seed_id)
+        })
+        .reduce(|acc, item| if acc.0 < item.0 { acc } else { item });
+    println!("result: {:?}", result);
+    println!("answer: {:?}", result.unwrap().0 .0);
 }
 
 fn find_id<
