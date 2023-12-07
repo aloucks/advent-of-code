@@ -1,141 +1,21 @@
-use derive_more::{Add, AddAssign, From, Into, Sub, SubAssign};
+use derive_more::{From, Into};
 use std::{fmt, ops::Range, str, str::FromStr};
 
-#[derive(
-    Copy,
-    Clone,
-    Debug,
-    PartialEq,
-    Eq,
-    PartialOrd,
-    Ord,
-    Hash,
-    From,
-    Add,
-    AddAssign,
-    Sub,
-    SubAssign,
-    Into,
-)]
+#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, From, Into)]
 pub struct SeedId(pub u64);
-#[derive(
-    Copy,
-    Clone,
-    Debug,
-    PartialEq,
-    Eq,
-    PartialOrd,
-    Ord,
-    Hash,
-    From,
-    Add,
-    AddAssign,
-    Sub,
-    SubAssign,
-    Into,
-)]
+#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, From, Into)]
 pub struct SoilId(pub u64);
-#[derive(
-    Copy,
-    Clone,
-    Debug,
-    PartialEq,
-    Eq,
-    PartialOrd,
-    Ord,
-    Hash,
-    From,
-    Add,
-    AddAssign,
-    Sub,
-    SubAssign,
-    Into,
-)]
+#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, From, Into)]
 pub struct FertilizerId(pub u64);
-#[derive(
-    Copy,
-    Clone,
-    Debug,
-    PartialEq,
-    Eq,
-    PartialOrd,
-    Ord,
-    Hash,
-    From,
-    Add,
-    AddAssign,
-    Sub,
-    SubAssign,
-    Into,
-)]
+#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, From, Into)]
 pub struct WaterId(pub u64);
-#[derive(
-    Copy,
-    Clone,
-    Debug,
-    PartialEq,
-    Eq,
-    PartialOrd,
-    Ord,
-    Hash,
-    From,
-    Add,
-    AddAssign,
-    Sub,
-    SubAssign,
-    Into,
-)]
+#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, From, Into)]
 pub struct LightId(pub u64);
-#[derive(
-    Copy,
-    Clone,
-    Debug,
-    PartialEq,
-    Eq,
-    PartialOrd,
-    Ord,
-    Hash,
-    From,
-    Add,
-    AddAssign,
-    Sub,
-    SubAssign,
-    Into,
-)]
+#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, From, Into)]
 pub struct TemperatureId(pub u64);
-#[derive(
-    Copy,
-    Clone,
-    Debug,
-    PartialEq,
-    Eq,
-    PartialOrd,
-    Ord,
-    Hash,
-    From,
-    Add,
-    AddAssign,
-    Sub,
-    SubAssign,
-    Into,
-)]
+#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, From, Into)]
 pub struct HumidityId(pub u64);
-#[derive(
-    Copy,
-    Clone,
-    Debug,
-    PartialEq,
-    Eq,
-    PartialOrd,
-    Ord,
-    Hash,
-    From,
-    Add,
-    AddAssign,
-    Sub,
-    SubAssign,
-    Into,
-)]
+#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, From, Into)]
 pub struct LocationId(pub u64);
 
 fn main() {
