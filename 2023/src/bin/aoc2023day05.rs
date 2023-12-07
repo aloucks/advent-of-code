@@ -1,10 +1,5 @@
 use derive_more::{Add, AddAssign, From, Into, Sub, SubAssign};
-use std::{
-    fmt,
-    ops::Range,
-    str,
-    str::FromStr,
-};
+use std::{fmt, ops::Range, str, str::FromStr};
 
 #[derive(
     Copy,
