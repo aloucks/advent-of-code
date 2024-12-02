@@ -1,7 +1,7 @@
 use derive_more::{From, Into};
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
-use std::{fmt, ops::Range, str, str::FromStr, cmp::Ordering};
+use std::{fmt, ops::Range, str, str::FromStr};
 
 #[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, From, Into)]
 pub struct SeedId(pub u64);

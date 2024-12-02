@@ -1,5 +1,6 @@
 
-use std::str::FromStr;
+
+#![allow(dead_code)]
 
 #[derive(Copy, Clone, Debug)]
 struct Race {
