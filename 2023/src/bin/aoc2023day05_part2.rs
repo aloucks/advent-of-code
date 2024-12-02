@@ -1,7 +1,7 @@
 use derive_more::{From, Into};
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
-use std::{fmt, ops::Range, str, str::FromStr};
+use std::{fmt, ops::Range, str, str::FromStr, cmp::Ordering};
 
 #[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, From, Into)]
 pub struct SeedId(pub u64);
@@ -198,7 +198,7 @@ fn parse_ranges<K: From<u64> + Ord, V: From<u64> + Ord>(
         }
         let (k, v) = map_ranges::<K, V>(line);
         ranges.push((k, v));
-        ranges.sort_by(|a, b| a.0.start.cmp(&b.0.start));
+        ranges.sort_by(|a, b| a.1.start.cmp(&b.1.start));
     }
     ranges
 }
