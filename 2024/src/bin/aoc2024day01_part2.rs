@@ -1,7 +1,6 @@
 use std::str::FromStr;
 
 fn main() {
-
     let input = include_str!("aoc2024day01_input.txt");
     let mut a = Vec::new();
     let mut b = Vec::new();
