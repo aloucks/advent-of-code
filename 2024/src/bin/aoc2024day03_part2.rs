@@ -102,7 +102,6 @@ fn main() {
         }
     }
 
-
     // Parser
     let mut total = 0;
 
